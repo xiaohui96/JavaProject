@@ -13,7 +13,7 @@ public class Weather extends Thread{
     Weather(){
         try {
             // 实例化InetAddress，指定地址
-            iaddress = InetAddress.getByName("224.255.0.0");
+            iaddress = InetAddress.getByName("224.255.10.0");
             // 实例化多点广播套接字
             socket =  new MulticastSocket(port);
             // 指定发送范围是本地网络
@@ -36,7 +36,7 @@ public class Weather extends Thread{
             System.out.println(new String(data));
             try {
                 socket.send(packet);
-                sleep(3000);
+                sleep(1000);
             }catch (Exception e){
                 e.printStackTrace();
             }
